@@ -1,0 +1,18 @@
+<ion-header>
+	<ion-navbar color="primary">
+		<ion-buttons left>
+			<button ion-button icon-only (click)="goBack()">
+				<ion-icon name="arrow-back"></ion-icon>
+			</button>
+		</ion-buttons>
+		<ion-title class="ml-30">
+			<ion-icon name="md-thermometer" class="mr-2"></ion-icon>
+			Humidity
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<h2 text-center>Average Humidity ( {{station.s_name}}, {{station.country}} )</h2>
+	<div id="humidity-chart" class="mt-5"></div>
+</ion-content>

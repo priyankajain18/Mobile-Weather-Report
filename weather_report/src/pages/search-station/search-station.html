@@ -1,0 +1,20 @@
+<ion-header>
+	<ion-navbar color="primary">
+		<ion-title class="ml-18">
+			<ion-icon name="md-search" class="mr-2"></ion-icon>
+			Search Station
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-list inset class="mt-2">
+		<button ion-item *ngFor="let station of stations" (click)="stationNavigation(station)">
+			<ion-icon name="{{ weatherIcons[station.s_icon] }}" item-start></ion-icon>
+			<ion-label>{{ station.s_name }}, {{ station.country }}</ion-label>
+			<ion-icon name="md-arrow-dropright" item-end></ion-icon>
+		</button>
+	</ion-list>
+</ion-content>
+
+<ion-footer></ion-footer>

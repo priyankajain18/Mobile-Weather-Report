@@ -1,0 +1,52 @@
+<ion-header>
+	<ion-navbar color="primary">
+		<ion-buttons left>
+			<button ion-button icon-only (click)="goBack()">
+				<ion-icon name="arrow-back"></ion-icon>
+			</button>
+		</ion-buttons>
+		<ion-title class="ml-30">
+			<ion-icon name="md-bulb" class="mr-2"></ion-icon>
+			Station Detail
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<h2 text-center>Weather in {{station.s_name}}, {{station.country}}</h2>
+	<h2 text-center>
+		<ion-icon name="{{ weatherIcons[station.s_icon] }}"></ion-icon>
+		{{stationDetailData.main?.temp - 273.15 | number}} &deg;C
+	</h2>
+
+	<ion-list inset>
+		<ion-item>
+			Wind
+			<span item-end>{{stationDetailData.wind?.speed}} m/s</span>
+		</ion-item>
+		<ion-item>
+			Cloudiness
+			<span item-end>{{getStationCloudiness(stationDetailData.weather)}}</span>
+		</ion-item>
+		<ion-item>
+			Pressure
+			<span item-end>{{stationDetailData.main?.pressure}} hpa</span>
+		</ion-item>
+		<ion-item>
+			Humidity
+			<span item-end>{{stationDetailData.main?.humidity}} %</span>
+		</ion-item>
+		<ion-item>
+			Sunrise
+			<span item-end>{{getStationSunriseSunset(stationDetailData.sys?.sunrise)|date: 'h:mm a'}}</span>
+		</ion-item>
+		<ion-item>
+			Sunset
+			<span item-end>{{getStationSunriseSunset(stationDetailData.sys?.sunset)|date: 'h:mm a'}}</span>
+		</ion-item>
+		<ion-item>
+			Coordinates
+			<span item-end>[ {{stationDetailData.coord?.lat}}, {{stationDetailData.coord?.lon}} ]</span>
+		</ion-item>
+	</ion-list>
+</ion-content>

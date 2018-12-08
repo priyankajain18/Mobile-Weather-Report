@@ -5,6 +5,8 @@ import { Platform, MenuController, Nav } from 'ionic-angular';
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ListPage } from '../pages/list/list';
 import { IndexPage } from '../pages/index/index';
+import { SearchStationPage } from '../pages/search-station/search-station';
+import { AddStationPage } from '../pages/add-station/add-station';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -29,8 +31,8 @@ export class MyApp {
 
     // set our app's pages
     this.pages = [
-      { title: 'Weather Report', component: IndexPage },
-      { title: 'My First List', component: ListPage }
+      { title: 'Search Station', component: SearchStationPage },
+      { title: 'Add Station', component: AddStationPage }
     ];
   }
 
